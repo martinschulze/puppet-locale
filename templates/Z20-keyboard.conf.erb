@@ -1,0 +1,7 @@
+Section "InputClass"
+        Identifier "keyboard"
+        MatchIsKeyboard "yes"
+        Option "XkbLayout" "<%= scope.lookupvar('locale::keyboard_conf_KEYMAP_X') %>"
+        Option "XkbVariant" "<%= scope.lookupvar('locale::keyboard_conf_KEYMAP_X_VARIANT') %>"
+EndSection
+
