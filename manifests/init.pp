@@ -30,16 +30,16 @@ class locale(
   $keymap,
   $keymap_x,
   $keymap_x_variant,
-  $use_eu_norm     = false,
-  $local_clock_rtc = true,
+  $use_eu_norm     = 'true',
+  $local_clock_rtc = 'true',
 ) {
 
   include locale::params
 
   $locale_conf_LANG = $locale
   $locale_conf_DATE_NUMERIC_TIME = $use_eu_norm ? {
-    true  => 'en_DK.utf8',
-    false => $locale,
+    'true'  => 'en_DK.utf8',
+    'false' => $locale,
     default => 'en_DK.utf8',
   }
   $locale_conf_DATE = $locale_conf_DATE_NUMERIC_TIME
@@ -52,16 +52,16 @@ class locale(
 
   $locale_gen_LOCALE = $locale
   $locale_gen_LOCALE_EU = $use_eu_norm ? {
-    true  => 'en_DK.utf8',
-    false => $locale,
+    'true'  => 'en_DK.utf8',
+    'false' => $locale,
     default => 'en_DK.utf8',
   }
 
-  if ! ($use_eu_norm in [ true, false ]) {
+  if ! ($use_eu_norm in [ 'true', 'false' ]) {
     fail("locale use_eu_norm parameter must be true false")
   }
 
-  if ! ($local_clock_rtc in [ true, false ]) {
+  if ! ($local_clock_rtc in [ 'true', 'false' ]) {
     fail("locale local_clock_rtc parameter must be true false")
   }
 
