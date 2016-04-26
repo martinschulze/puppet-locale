@@ -38,7 +38,7 @@ class locale::params (
     }
     'ubuntu', 'debian': {
       # Remove this comment and the followning line if you add OS support.
-      fail("Module ${module_name} is not supported on ${::operatingsystem}")
+#      fail("Module ${module_name} is not supported on ${::operatingsystem}")
       $locale_conf_file       = '/etc/locale.conf'
       $locale_gen_file        = '/etc/locale.gen'
       $z20_keyboard_conf_file = '/etc/X11/xorg.conf.d/20-keyboard.conf'
